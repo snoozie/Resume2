@@ -1,4 +1,14 @@
-<h1>Welcome</h1>
-<hr />
-<p><?php echo $data['welcome_message']; ?></p>
-<p>This content can be changed in /app/views/welcome/welcome.php</p>
+<body>
+<div style="float: left; width: 100%;">
+
+    <div style="float: right;">
+    <p><?php
+    foreach($data as $d)
+    {
+    echo "<p>".$d."</p>";
+    }
+    //print_r ($data);
+    ?>
+    </p>
+    </div>
+</div>

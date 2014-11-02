@@ -16,10 +16,10 @@ class Config {
 		ob_start();
 
 		//site address
-		define('DIR', 'http://domain.com/');
+		define('DIR', '');
 
 		//set default controller and method for legacy calls
-		define('DEFAULT_CONTROLLER', 'welcome');
+		define('DEFAULT_CONTROLLER', 'resume');
 		define('DEFAULT_METHOD' , 'index');
 
 		//set a default language
@@ -28,10 +28,10 @@ class Config {
 		//database details ONLY NEEDED IF USING A DATABASE
 		define('DB_TYPE', 'mysql');
 		define('DB_HOST', 'localhost');
-		define('DB_NAME', 'dbname');
-		define('DB_USER', 'username');
-		define('DB_PASS', 'password');
-		define('PREFIX', 'smvc_');
+		define('DB_NAME', 'resume');
+		define('DB_USER', 'root');
+		define('DB_PASS', '');
+		define('PREFIX', '');
 
 		//set prefix for sessions
 		define('SESSION_PREFIX', 'smvc_');
