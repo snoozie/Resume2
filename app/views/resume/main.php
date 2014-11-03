@@ -27,6 +27,7 @@ $references = $data['references'];
     </div>
 </div>
 
+<?php
 View::render('resume/objectives', $objectives);
 View::render('resume/skills', $skills);
 View::render('resume/education', $education);
