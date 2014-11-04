@@ -31,11 +31,11 @@ foreach($data as $d)
     }
     if(strlen($d->email) > 0)
     {
-        print "| $d->email ";
+        print "| <a href='mailto:$d->email'>$d->email</a> ";
     }
     if(strlen($d->website) > 0)
     {
-        print "| $d->website ";
+        print "| <a href='http://$d->website' target='_blank'>$d->website</a>";
     }
     print "</p>";
 }

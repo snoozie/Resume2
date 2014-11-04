@@ -11,11 +11,33 @@
 print "<h3>Education</h3>";
 
 /*
- * Display education details
+ * Insert image depending on education using id from education table
  */
+
 foreach($data as $d)
 {
-    echo "<p><b>".$d->title."</b> ".date("d/m/Y", strtotime($d->start))." - ".date("d/m/Y", strtotime($d->end))."</p>";
-}
+    $image = "";
+    $title = "";
+    switch($d->id)
+    {
+        case 1:
+            $image = "bachelor_CS_graduation.png";
+            $title = "<a class='fancybox' href='". \helpers\url::get_template_path(). "images/$image'><b>".$d->title."</b></a>";
+            break;
+        case 2:
+            $image = "master_Tech_graduation.jpg";
+            $title = "<a class='fancybox' href='". \helpers\url::get_template_path(). "images/$image'><b>".$d->title."</b></a>";
+            break;
+        default:
+            $title = "<b>".$d->title."</b>";
+            break;
+    }
+
+    /*
+     * Display education details
+     */
+
+    print "<p>".$title." ".date("d/m/Y", strtotime($d->start))." - ".date("d/m/Y", strtotime($d->end))."</p>";
+} 
 
 ?>

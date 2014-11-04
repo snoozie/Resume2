@@ -15,41 +15,73 @@ print "<h3>Experience</h3>";
  */
 foreach($data as $d)
 {
-    echo "<p><b>".$d->title."</b> ".date("d/m/Y", strtotime($d->start))." - ".date("d/m/Y", strtotime($d->end))."</p>";
+    print "<p><b>".$d->title."</b> ";
+    
+    /*
+     * Insert website address depending on company
+     */
+    $website = "";
+    switch($d->company)
+    {
+        case 'White Rhino':
+            $website = "www.whiterhino.com.au";
+            break;
+        case 'RMIT':
+            $website = "www.rmit.edu.au";
+            break;
+        case 'DigSilent Pacific':
+            $website = "www.digsilent.com.au";
+            break;
+        case 'Casting Kids':
+            $website = "www.castingkids.com.au";
+            break;
+        default:
+            break;
+    }
+    if(strlen($d->company) > 0)
+    {
+        print "<b>at <a href='http://$website' target='_blank'>$d->company</a></b> ";
+    }
+    print date("d/m/Y", strtotime($d->start))." - ".date("d/m/Y", strtotime($d->end));
+    if(strlen($d->work_type) > 0)
+    {
+        print "</br>$d->work_type";
+    }
+    print "</p>";
     $responsibility = json_decode($d->responsibilities);
     $achievements = json_decode($d->achievements);
     $technology = json_decode($d->technologies);
    
-    echo "<p>Responsibilities</p>";
+    print "<p>Responsibilities</p>";
     
     /*
      * Display responsibilities list
      */
-    echo "<ul>";
+    print "<ul>";
     
     foreach($responsibility->responsibilities as $r)
     {
-        echo "<li>";
-        echo $r;
-        echo "</li>";
+        print "<li>";
+        print $r;
+        print "</li>";
     }
     
-    echo "</ul>";
+    print "</ul>";
     
     if(count($achievements->achievements) > 0)
     {
-        echo "<p>Achievements</p>";
+        print "<p>Achievements</p>";
     
         /*
          * Display achievements list
          */
-        echo "<ul>";
+        print "<ul>";
 
         foreach($achievements->achievements as $a)
         {
-            echo "<li>";
-            echo $a;
-            echo "</li>";
+            print "<li>";
+            print $a;
+            print "</li>";
         }
 
         print "</ul>";
@@ -65,20 +97,20 @@ foreach($data as $d)
     
     foreach($technology as $tech)
     {
-        echo "<li>";
+        print "<li>";
         $technology_string = "";
         foreach($tech as $t)
         {
-            //echo $t.",";
+            //print $t.",";
             $technology_string .= $t.", ";
         }
         $character_mask = ", ";
         $technology_string = trim($technology_string, $character_mask);
         print $technology_string;
-        echo "</li>";
+        print "</li>";
     }
     
-    echo "</ul>";
+    print "</ul>";
 }
 ?>
 
