@@ -1,4 +1,13 @@
 <?php namespace models;
+
+/*
+ * Resume model
+ *
+ * @author Susan Theron
+ * @version 1
+ * @date November 3, 2014
+ */
+
 class Resume extends \core\model{
 
     /**
