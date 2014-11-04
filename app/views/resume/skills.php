@@ -18,8 +18,8 @@ print "<table>";
 foreach($data as $d)
 {
     print "<tr>";
-    echo "<td>".$d->type."</td>";
-    echo "<td>".$d->skill."</td>";
+    print "<td>".$d->type."</td>";
+    print "<td>".$d->skill."</td>";
     print "<tr>";
 }
 print "</table>";

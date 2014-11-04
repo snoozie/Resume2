@@ -36,7 +36,7 @@ foreach($data as $d)
 print "<ul>";
 foreach($points as $p)
 {
-    echo "<li>".$p."</li>";
+    print "<li>".$p."</li>";
 }
 print "</ul>";
 

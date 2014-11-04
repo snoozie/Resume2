@@ -13,10 +13,10 @@
  */
 foreach($data as $d)
 {
-echo "<span style='font-size: 25pt;'>".$d->name."</span></br>";
-echo "<span style='padding: 4px;'>".$d->address."</span></br>";
-echo "<span>Phone: ".$d->phone."</span></br>";
-echo "<span>Email: ".$d->email."</span></br>";
+    print "<span style='font-size: 25pt;'>".$d->name."</span></br>";
+    print "<span style='padding: 4px;'>".$d->address."</span></br>";
+    print "<span>Phone: ".$d->phone."</span></br>";
+    print "<span>Email: ".$d->email."</span></br>";
 }
 
 ?>
